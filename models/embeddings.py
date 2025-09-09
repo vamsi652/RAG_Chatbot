@@ -8,7 +8,7 @@ EMBEDDINGS_DIR = "faiss_index"
 def build_embeddings(documents):
     embedding_model = GoogleGenerativeAIEmbeddings(
         api_key=GOOGLE_API_KEY,
-        model="models/embedding-001"  # Use the correct model
+        model="models/embedding-001"
     )
     vector_store = FAISS.from_texts(documents, embedding_model)
     return vector_store
